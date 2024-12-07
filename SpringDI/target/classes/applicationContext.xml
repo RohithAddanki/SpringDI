@@ -1,0 +1,35 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Employee Bean -->
+    <bean id="employee" class="com.klef.jfsd.exam.Employee">
+        <constructor-arg value="101"/>
+        <constructor-arg value="Ram"/>
+        <constructor-arg value="60000.0"/>
+        <constructor-arg value="Engineering"/>
+        <constructor-arg>
+            <list>
+                <value>Java</value>
+                <value>Spring</value>
+                <value>Hibernate</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <!-- Instructor Bean -->
+    <bean id="instructor" class="com.klef.jfsd.exam.Instructor">
+        <property name="instructorId" value="201"/>
+        <property name="name" value="Mr. Arun Reddy"/>
+        <property name="email" value="arunreddyp@kluniversity.in"/>
+        <property name="phoneNumber" value="9876543210"/>
+    </bean>
+
+    <!-- Course Bean -->
+    <bean id="course" class="com.klef.jfsd.exam.Course" autowire="byName">
+        <property name="courseId" value="301"/>
+        <property name="courseName" value="Spring Framework"/>
+        <property name="credits" value="4"/>
+    </bean>
+</beans>
